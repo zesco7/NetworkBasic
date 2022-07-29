@@ -24,6 +24,10 @@
 		984E708F2891706800E3225A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E708E2891706800E3225A /* testViewController.swift */; };
 		984E70942891755600E3225A /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E70922891755600E3225A /* testTableViewCell.swift */; };
 		984E70952891755600E3225A /* testTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984E70932891755600E3225A /* testTableViewCell.xib */; };
+		98F8806828935DFE00E356F9 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8806728935DFE00E356F9 /* LocationViewController.swift */; };
+		98F8806D2893861400E356F9 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98F8806A2893861300E356F9 /* GmarketSansTTFLight.ttf */; };
+		98F8806E2893861400E356F9 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98F8806B2893861400E356F9 /* GmarketSansTTFMedium.ttf */; };
+		98F8806F2893861400E356F9 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98F8806C2893861400E356F9 /* GmarketSansTTFBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		984E708E2891706800E3225A /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		984E70922891755600E3225A /* testTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTableViewCell.swift; sourceTree = "<group>"; };
 		984E70932891755600E3225A /* testTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testTableViewCell.xib; sourceTree = "<group>"; };
+		98F8806728935DFE00E356F9 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		98F8806A2893861300E356F9 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
+		98F8806B2893861400E356F9 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
+		98F8806C2893861400E356F9 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +94,13 @@
 		984D14062890DD7E0094DF1F /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				98F88069289385F900E356F9 /* Resources */,
 				98337CE628920CAA00F288E8 /* Protocol */,
 				984D14072890DD7E0094DF1F /* AppDelegate.swift */,
 				984D14092890DD7E0094DF1F /* SceneDelegate.swift */,
 				984D140B2890DD7E0094DF1F /* ViewController.swift */,
 				984D140D2890DD7E0094DF1F /* Main.storyboard */,
+				98F8806728935DFE00E356F9 /* LocationViewController.swift */,
 				98337CED28923AA600F288E8 /* WebViewController.swift */,
 				98337CEB2892307700F288E8 /* TranslationViewController.swift */,
 				98337CE92892237C00F288E8 /* LottoViewController.swift */,
@@ -106,6 +116,16 @@
 				984D14152890DD830094DF1F /* Info.plist */,
 			);
 			path = NetworkBasic;
+			sourceTree = "<group>";
+		};
+		98F88069289385F900E356F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98F8806C2893861400E356F9 /* GmarketSansTTFBold.ttf */,
+				98F8806A2893861300E356F9 /* GmarketSansTTFLight.ttf */,
+				98F8806B2893861400E356F9 /* GmarketSansTTFMedium.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,8 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				984E70952891755600E3225A /* testTableViewCell.xib in Resources */,
+				98F8806F2893861400E356F9 /* GmarketSansTTFBold.ttf in Resources */,
 				984D14142890DD830094DF1F /* LaunchScreen.storyboard in Resources */,
+				98F8806E2893861400E356F9 /* GmarketSansTTFMedium.ttf in Resources */,
 				984D14242890E4D60094DF1F /* ListTableViewCell.xib in Resources */,
+				98F8806D2893861400E356F9 /* GmarketSansTTFLight.ttf in Resources */,
 				984D14112890DD830094DF1F /* Assets.xcassets in Resources */,
 				984D140F2890DD7E0094DF1F /* Main.storyboard in Resources */,
 			);
@@ -188,6 +211,7 @@
 				984D141C2890E1F80094DF1F /* SearchViewController.swift in Sources */,
 				984D141E2890E2D90094DF1F /* TableViewController.swift in Sources */,
 				98337CEA2892237C00F288E8 /* LottoViewController.swift in Sources */,
+				98F8806828935DFE00E356F9 /* LocationViewController.swift in Sources */,
 				98337CEE28923AA600F288E8 /* WebViewController.swift in Sources */,
 				984E70942891755600E3225A /* testTableViewCell.swift in Sources */,
 				984D140A2890DD7E0094DF1F /* SceneDelegate.swift in Sources */,

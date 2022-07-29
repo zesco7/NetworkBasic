@@ -4,7 +4,7 @@
 //
 //  Created by Mac Pro 15 on 2022/07/28.
 //
-
+/*
 import UIKit
 import WebKit
 class WebViewController: UIViewController {
@@ -38,3 +38,4 @@ class WebViewController: UIViewController {
     }
     
     }
+*/
