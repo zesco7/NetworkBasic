@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OaF-lv-XZj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jOG-DB-WS0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -291,9 +291,9 @@
                                     <constraint firstAttribute="height" constant="50" id="y2a-fK-pmP"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Local Notification"/>
                                 <connections>
-                                    <action selector="notificationButtonClicked:" destination="OaF-lv-XZj" eventType="touchUpInside" id="ucS-lk-VMy"/>
+                                    <action selector="notificationButtonClicked:" destination="OaF-lv-XZj" eventType="touchUpInside" id="1GV-vc-nhd"/>
                                 </connections>
                             </button>
                         </subviews>

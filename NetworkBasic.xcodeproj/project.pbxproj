@@ -24,10 +24,10 @@
 		984E708F2891706800E3225A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E708E2891706800E3225A /* testViewController.swift */; };
 		984E70942891755600E3225A /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E70922891755600E3225A /* testTableViewCell.swift */; };
 		984E70952891755600E3225A /* testTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984E70932891755600E3225A /* testTableViewCell.xib */; };
+		9883573828941714002006D4 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98835737289416DF002006D4 /* GmarketSansTTFBold.ttf */; };
+		9883573928941714002006D4 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98835735289416DF002006D4 /* GmarketSansTTFLight.ttf */; };
+		9883573A28941714002006D4 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98835736289416DF002006D4 /* GmarketSansTTFMedium.ttf */; };
 		98F8806828935DFE00E356F9 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8806728935DFE00E356F9 /* LocationViewController.swift */; };
-		98F8806D2893861400E356F9 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98F8806A2893861300E356F9 /* GmarketSansTTFLight.ttf */; };
-		98F8806E2893861400E356F9 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98F8806B2893861400E356F9 /* GmarketSansTTFMedium.ttf */; };
-		98F8806F2893861400E356F9 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98F8806C2893861400E356F9 /* GmarketSansTTFBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +50,10 @@
 		984E708E2891706800E3225A /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		984E70922891755600E3225A /* testTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTableViewCell.swift; sourceTree = "<group>"; };
 		984E70932891755600E3225A /* testTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testTableViewCell.xib; sourceTree = "<group>"; };
+		98835735289416DF002006D4 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFLight.ttf; path = ../../../../GmarketSansTTF/GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
+		98835736289416DF002006D4 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFMedium.ttf; path = ../../../../GmarketSansTTF/GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
+		98835737289416DF002006D4 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFBold.ttf; path = ../../../../GmarketSansTTF/GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
 		98F8806728935DFE00E356F9 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		98F8806A2893861300E356F9 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
-		98F8806B2893861400E356F9 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
-		98F8806C2893861400E356F9 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +121,9 @@
 		98F88069289385F900E356F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				98F8806C2893861400E356F9 /* GmarketSansTTFBold.ttf */,
-				98F8806A2893861300E356F9 /* GmarketSansTTFLight.ttf */,
-				98F8806B2893861400E356F9 /* GmarketSansTTFMedium.ttf */,
+				98835737289416DF002006D4 /* GmarketSansTTFBold.ttf */,
+				98835735289416DF002006D4 /* GmarketSansTTFLight.ttf */,
+				98835736289416DF002006D4 /* GmarketSansTTFMedium.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -186,12 +186,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9883573828941714002006D4 /* GmarketSansTTFBold.ttf in Resources */,
+				9883573928941714002006D4 /* GmarketSansTTFLight.ttf in Resources */,
+				9883573A28941714002006D4 /* GmarketSansTTFMedium.ttf in Resources */,
 				984E70952891755600E3225A /* testTableViewCell.xib in Resources */,
-				98F8806F2893861400E356F9 /* GmarketSansTTFBold.ttf in Resources */,
 				984D14142890DD830094DF1F /* LaunchScreen.storyboard in Resources */,
-				98F8806E2893861400E356F9 /* GmarketSansTTFMedium.ttf in Resources */,
 				984D14242890E4D60094DF1F /* ListTableViewCell.xib in Resources */,
-				98F8806D2893861400E356F9 /* GmarketSansTTFLight.ttf in Resources */,
 				984D14112890DD830094DF1F /* Assets.xcassets in Resources */,
 				984D140F2890DD7E0094DF1F /* Main.storyboard in Resources */,
 			);

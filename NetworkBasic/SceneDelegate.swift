@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidBecomeActive(_ scene: UIScene) {
         
+        //시점을 명확하게 확인하기 위해서는 SceneDelegate 활용
         //Badge제거
         UIApplication.shared.applicationIconBadgeNumber = 0
         // Called when the scene has moved from an inactive state to an active state.
@@ -38,7 +39,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
-
+    
+    //포그라운드에 들어왔을 때는 함수가 실행되는 시점이 한번임
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.

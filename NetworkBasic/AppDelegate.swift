@@ -16,13 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         
         //2. 노티제거
-        //알람앱미리알림 스케줄할일목록-> 하루전 알림, 30분전 알림
+        //알람앱미리알림 스케줄할일목록-> 하루전 알림, 30분전 알림 등 예정알림도 삭제해줌
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
+        //delegate연결해줘야됨.
         UNUserNotificationCenter.current().delegate = self
         return true
     }
     
+    //애플이 시스템으로 만든 함수기 때문에 호출하지 않아도 자동실행됨.
+    //userNotificationCenter메서드 구현하지 않으면 foreground상태에서 안보임(foreground 수신용)
+    //foreground에서 어떤걸 허용해줄지 completionHandler를 배열형태로 작성
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.list, .banner, .badge, .sound])
         //iOS14 이후부터는 .alert 대신 .list, .banner

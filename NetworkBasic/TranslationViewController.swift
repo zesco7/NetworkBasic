@@ -23,7 +23,7 @@ class TranslationViewController: UIViewController {
         userInputTextView.delegate = self
         userInputTextView.text = textViewplaceholderText
         userInputTextView.textColor = .lightGray
-        
+        userInputTextView.font = UIFont(name: "GmarketSansTTFBold", size: 20)
     }
     
 }
