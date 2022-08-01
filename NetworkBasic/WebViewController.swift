@@ -7,7 +7,10 @@
 /*
 import UIKit
 import WebKit
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, ReusableViewProtocol {
+    //메타타입을 쓰면 문자열로 인식해줌. String(describing: WebViewController.self) 를 "WebViewController"로 인식
+    static var reuseIdentifier: String = String(describing: WebViewController.self)
+    
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webKit: WKWebView!
@@ -33,9 +36,16 @@ class WebViewController: UIViewController {
     }
     
     extension WebViewController: UISearchBarDelegate {
+        func search
         
-        func u
+        extension WebViewController: UISearchBarDelegate {
+            
+            func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+                openWebPage(url: searchBar.text!)
+            }
+        }
     }
     
     }
+
 */

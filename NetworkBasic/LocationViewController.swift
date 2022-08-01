@@ -9,7 +9,7 @@ import UIKit
 import UserNotifications
  
 class LocationViewController: UIViewController {
-
+    
     //Notification 1. Local Notification 담당 클래스 가져와서 인스턴스 선언하기(UNUserNotificationCenter.current())
     //UNUserNotificationCenter에서 UN은 User Notification
     let notificationCenter = UNUserNotificationCenter.current()
@@ -18,7 +18,7 @@ class LocationViewController: UIViewController {
         super.viewDidLoad()
         
         //권한요청, 등록코드를 viewDidLoad에 호출해야 한다.
-        
+        ReusableViewProtocol.self
         
         //Custom Font: 폰트이름 확인용도로 사용
         for family in UIFont.familyNames {

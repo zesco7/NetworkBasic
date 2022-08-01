@@ -46,7 +46,7 @@ import UIKit
 //        
 //        //테이블뷰가 사용할 테이블뷰셀(XIB)등록
 //        //XIB: Xml Interface Builder (예전에는 NIB)
-//        searchTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
+//        searchTableView.register(UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
 //    }
 //    
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
