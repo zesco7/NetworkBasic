@@ -163,6 +163,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bonusNumber" destination="NjC-TX-fCF" id="pmD-EG-C3Z"/>
+                        <outlet property="luckyNumber1" destination="5bI-Cj-4dV" id="2QT-Eq-2uS"/>
+                        <outlet property="luckyNumber2" destination="Oo7-29-L50" id="ghO-bq-FsN"/>
+                        <outlet property="luckyNumber3" destination="jph-Qs-fmQ" id="l5t-wf-sZF"/>
+                        <outlet property="luckyNumber4" destination="ZdT-3H-vET" id="g7h-07-Azw"/>
+                        <outlet property="luckyNumber5" destination="Yot-zz-ov2" id="aPB-eb-ecM"/>
+                        <outlet property="luckyNumber6" destination="1WI-mD-Cnn" id="kSW-NK-R3M"/>
                         <outlet property="numberTextField" destination="UPb-cK-sL5" id="Vcf-xc-Ry6"/>
                     </connections>
                 </viewController>
