@@ -6,11 +6,13 @@
 //
 
 import UIKit
+
 import Alamofire
+import Kingfisher
 import SwiftyJSON
 
 
-/*
+
 class BeerRecommendationViewController: UIViewController {
 
     
@@ -43,15 +45,17 @@ class BeerRecommendationViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                let beerimage = json["image_url"].stringValue
-                print("beerImage")
+                let beerImage = json[0]["image_url"].stringValue
+                print(beerImage)
                 
-                let beerName = json["name"].stringValue
+                let beerName = json[0]["name"].stringValue
                 print(beerName)
                 
-                let beerDescription = json["description"].rawString()
-
-                self.beerImage.image = beerImage
+                let beerDescription = json[0]["description"].stringValue
+                print(beerDescription)
+                
+                let imageUrl = url(String: beerImage)
+                self.beerImage.image = beerImage.kf.setImage(with: imageUrl)
                 self.beerName.text = beerName
                 self.beerDescription.text = beerDescription
                 
@@ -60,10 +64,8 @@ class BeerRecommendationViewController: UIViewController {
             }
         }
     }
-}
+
     @IBAction func recommendationButtonClicked(_ sender: UIButton) {
         loadBeerInfo()
     }
 }
-
-*/

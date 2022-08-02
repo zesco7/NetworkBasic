@@ -58,19 +58,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
 /*
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    func configureView() {
-        searchTableView.backgroundColor = .clear
-        searchTableView.separatorColor = .clear
-        searchTableView.rowHeight = 60
-    }
-    
-//    func configureLabel() {
-//        <#code#>
-//    }
-    
-
     
 
     var list: [String] = []
