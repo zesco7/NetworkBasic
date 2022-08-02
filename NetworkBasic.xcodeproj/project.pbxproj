@@ -29,6 +29,9 @@
 		9883573828941714002006D4 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98835737289416DF002006D4 /* GmarketSansTTFBold.ttf */; };
 		9883573928941714002006D4 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98835735289416DF002006D4 /* GmarketSansTTFLight.ttf */; };
 		9883573A28941714002006D4 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98835736289416DF002006D4 /* GmarketSansTTFMedium.ttf */; };
+		98A9D4C128980B4C00319ECC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9D4C028980B4C00319ECC /* UILabel+Extension.swift */; };
+		98A9D4C328980CA500319ECC /* BeerRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9D4C228980CA500319ECC /* BeerRecommendationViewController.swift */; };
+		98A9D4C52898BD2900319ECC /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9D4C42898BD2900319ECC /* BoxOfficeModel.swift */; };
 		98C0CDD72897529D00EF08C9 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0CDD62897529D00EF08C9 /* ReusableViewProtocol.swift */; };
 		98C0CDDA289757A400EF08C9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0CDD9289757A400EF08C9 /* Constant.swift */; };
 		98C0CDDC28975FA400EF08C9 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0CDDB28975FA400EF08C9 /* UserDefaultsHelper.swift */; };
@@ -59,6 +62,9 @@
 		98835735289416DF002006D4 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFLight.ttf; path = ../../../../GmarketSansTTF/GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
 		98835736289416DF002006D4 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFMedium.ttf; path = ../../../../GmarketSansTTF/GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
 		98835737289416DF002006D4 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFBold.ttf; path = ../../../../GmarketSansTTF/GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
+		98A9D4C028980B4C00319ECC /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		98A9D4C228980CA500319ECC /* BeerRecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRecommendationViewController.swift; sourceTree = "<group>"; };
+		98A9D4C42898BD2900319ECC /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 		98C0CDD62897529D00EF08C9 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		98C0CDD9289757A400EF08C9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		98C0CDDB28975FA400EF08C9 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
@@ -111,16 +117,19 @@
 				98C0CDD82897578400EF08C9 /* Constant */,
 				98F88069289385F900E356F9 /* Resources */,
 				98337CE628920CAA00F288E8 /* Protocol */,
-				984D14072890DD7E0094DF1F /* AppDelegate.swift */,
+				98337CE92892237C00F288E8 /* LottoViewController.swift */,
+				98A9D4C028980B4C00319ECC /* UILabel+Extension.swift */,
+				98A9D4C228980CA500319ECC /* BeerRecommendationViewController.swift */,
+				98A9D4C42898BD2900319ECC /* BoxOfficeModel.swift */,
 				984D14092890DD7E0094DF1F /* SceneDelegate.swift */,
 				984D140B2890DD7E0094DF1F /* ViewController.swift */,
 				984D140D2890DD7E0094DF1F /* Main.storyboard */,
 				98F8806728935DFE00E356F9 /* LocationViewController.swift */,
 				98337CED28923AA600F288E8 /* WebViewController.swift */,
 				98337CEB2892307700F288E8 /* TranslationViewController.swift */,
-				98337CE92892237C00F288E8 /* LottoViewController.swift */,
 				984E70932891755600E3225A /* testTableViewCell.xib */,
 				984D141B2890E1F80094DF1F /* SearchViewController.swift */,
+				984D14072890DD7E0094DF1F /* AppDelegate.swift */,
 				984E70922891755600E3225A /* testTableViewCell.swift */,
 				984D14212890E4D60094DF1F /* ListTableViewCell.swift */,
 				984D14222890E4D60094DF1F /* ListTableViewCell.xib */,
@@ -239,14 +248,17 @@
 				984D140C2890DD7E0094DF1F /* ViewController.swift in Sources */,
 				98337CEC2892307700F288E8 /* TranslationViewController.swift in Sources */,
 				984D14082890DD7E0094DF1F /* AppDelegate.swift in Sources */,
+				98A9D4C328980CA500319ECC /* BeerRecommendationViewController.swift in Sources */,
 				98C0CDDA289757A400EF08C9 /* Constant.swift in Sources */,
 				98D0370228952F1B004C9E3B /* ViewPresentableProtocolViewController.swift in Sources */,
 				984E708F2891706800E3225A /* testViewController.swift in Sources */,
 				984D141C2890E1F80094DF1F /* SearchViewController.swift in Sources */,
 				984D141E2890E2D90094DF1F /* TableViewController.swift in Sources */,
+				98A9D4C128980B4C00319ECC /* UILabel+Extension.swift in Sources */,
 				98337CEA2892237C00F288E8 /* LottoViewController.swift in Sources */,
 				98F8806828935DFE00E356F9 /* LocationViewController.swift in Sources */,
 				98337CEE28923AA600F288E8 /* WebViewController.swift in Sources */,
+				98A9D4C52898BD2900319ECC /* BoxOfficeModel.swift in Sources */,
 				984E70942891755600E3225A /* testTableViewCell.swift in Sources */,
 				98C0CDDC28975FA400EF08C9 /* UserDefaultsHelper.swift in Sources */,
 				98C0CDD72897529D00EF08C9 /* ReusableViewProtocol.swift in Sources */,

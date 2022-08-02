@@ -30,7 +30,15 @@ class LottoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        luckyNumber1.setBorder()
+        luckyNumber2.setBorder()
+        luckyNumber3.setBorder()
+        luckyNumber4.setBorder()
+        luckyNumber5.setBorder()
+        luckyNumber6.setBorder()
+        bonusNumber.setBorder()
+        
         numberTextField.inputView = lottoPickerView
         
         lottoPickerView.delegate = self
@@ -82,6 +90,7 @@ class LottoViewController: UIViewController {
                 
                 self.numberTextField.text = date
                 self.luckyNumber1.text = luckyNumber1
+                self.luckyNumber1.setBorder()
                 self.luckyNumber2.text = luckyNumber2
                 self.luckyNumber3.text = luckyNumber3
                 self.luckyNumber4.text = luckyNumber4
