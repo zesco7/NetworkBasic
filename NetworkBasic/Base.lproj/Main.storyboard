@@ -23,12 +23,10 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ps5-a2-Olx">
-                                <rect key="frame" x="0.0" y="288" width="414" height="400"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ps5-a2-Olx">
+                                <rect key="frame" x="0.0" y="124" width="414" height="712"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="erk-xB-su5"/>
-                                </constraints>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,10 +34,7 @@
                         <constraints>
                             <constraint firstItem="KBJ-xw-ku9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1Vg-Dl-n7t"/>
                             <constraint firstItem="KBJ-xw-ku9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6V3-Fv-ZXo"/>
-                            <constraint firstItem="ps5-a2-Olx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fic-ht-8c2"/>
                             <constraint firstItem="KBJ-xw-ku9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mZs-Eh-8iT"/>
-                            <constraint firstItem="ps5-a2-Olx" firstAttribute="top" secondItem="KBJ-xw-ku9" secondAttribute="bottom" constant="200" id="rdM-lY-84T"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ps5-a2-Olx" secondAttribute="trailing" id="uG9-UU-Nyd"/>
                         </constraints>
                     </view>
                     <connections>
