@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jOG-DB-WS0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -196,8 +196,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4qe-tL-0YU">
+                                <rect key="frame" x="20" y="562" width="374" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="zww-zm-yTe"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AT-7i-cpf">
+                                <rect key="frame" x="31" y="386" width="73" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="번역하기"/>
+                                <connections>
+                                    <action selector="translationButton:" destination="jOG-DB-WS0" eventType="touchUpInside" id="w22-X8-DGH"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jae-wJ-Ewp">
-                                <rect key="frame" x="101" y="513" width="240" height="128"/>
+                                <rect key="frame" x="141" y="337" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -210,11 +229,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Oqh-g8-05n" firstAttribute="leading" secondItem="VoU-f0-Uek" secondAttribute="leading" constant="20" id="BRL-IC-JyY"/>
+                            <constraint firstItem="VoU-f0-Uek" firstAttribute="bottom" secondItem="4qe-tL-0YU" secondAttribute="bottom" constant="100" id="NfN-Kz-lqU"/>
+                            <constraint firstItem="VoU-f0-Uek" firstAttribute="trailing" secondItem="4qe-tL-0YU" secondAttribute="trailing" constant="20" id="PWc-UU-y3L"/>
                             <constraint firstItem="VoU-f0-Uek" firstAttribute="trailing" secondItem="Oqh-g8-05n" secondAttribute="trailing" constant="20" id="QEH-Gk-Pvf"/>
                             <constraint firstItem="Oqh-g8-05n" firstAttribute="top" secondItem="VoU-f0-Uek" secondAttribute="top" constant="50" id="hoL-BA-uOf"/>
+                            <constraint firstItem="4qe-tL-0YU" firstAttribute="leading" secondItem="VoU-f0-Uek" secondAttribute="leading" constant="20" id="rNj-aE-iPn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="translatedTextView" destination="4qe-tL-0YU" id="WXK-2J-Doi"/>
                         <outlet property="userInputTextView" destination="Oqh-g8-05n" id="Tfc-HB-aUv"/>
                     </connections>
                 </viewController>

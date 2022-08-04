@@ -10,13 +10,14 @@ import Foundation
 struct APIKey {
     static let BOXOFFICE = "847feb80cdfbe381647688f09d9e9d22"
     static let NAVER_ID = "tfYqqDDQUPRUW3CIm5x4"
-    static let NAVER_SECRET = "KVWSBEOby3"
+    static let NAVER_SECRET = "NAoG26YRAW"
 }
 
+//공통되는 부분까지 EndPoint로 작성
 struct EndPoint {
     static let boxOfficeURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
     static let lottoURL = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
-    static let imageSearchURL = "https://openapi.naver.com/v1/search/image.xml?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&sort=sim"
+    static let translateURL = "https://openapi.naver.com/v1/papago/n2mt"
         
 }
 

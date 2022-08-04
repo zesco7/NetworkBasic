@@ -37,8 +37,8 @@ import SwiftyJSON
  -. 결과값을 누적해서 표시하지 않으려면 기존 배열을 삭제해주는 작업을 해야한다.(list.removeAll())
  -. 검색시 이전배열 데이터가 남아있는 것은 테이블뷰를 갱신해주지 않아서 그렇다.(테이블뷰 갱신해주면 사라짐)
  -. 전체 데이터가 아닌 필요한 데이터만 표시하기 위해서는 구조체에 필요한 변수를 선언한다.(BoxOfficeModel)
- 
  */
+
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
@@ -66,7 +66,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         list.removeAll()
         
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=847feb80cdfbe381647688f09d9e9d22&targetDt=\(text)"
+        //구조체로 중복되는 부분을 접근할 수 있다.(APIKey, EndPoint) : 구조체로 접근하지 않으면 버젼관리 한 것을 다른사람이 봤을때 키값에 대한 정보를 알 수 없기 때문에 구조체로 접근하는 것이 좋음.
+        let url = "\(EndPoint.boxOfficeURL)key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
