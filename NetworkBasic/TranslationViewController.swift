@@ -64,7 +64,7 @@ class TranslationViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                let translation = json["translatedText"].stringValue
+                let translation = json["message"]["result"]["translatedText"].stringValue
                 print(translation)
                 
                 self.translatedTextView.text = translation
