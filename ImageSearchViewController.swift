@@ -86,3 +86,12 @@ import UIKit
  
  */
 
+
+
+/*0805
+ json["item"].arrayValue
+ json["item"].arrayValue.map { $0["link"].stringValue} // 받아온 api 값 중 link만 stringValue로 뽑겠다.
+ 
+ 
+ 
+ */

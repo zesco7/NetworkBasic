@@ -52,7 +52,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.dataSource = self
         searchTableView.register(UINib(nibName: ListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier:  ListTableViewCell.identifier)
         
-        requestBoxOffice(text: "20220801")
+        
+        //특정날짜에 대한 결과만 보여주는 것이 아니라 매일 전날의 결과를 표시할 수 있도록 하는 방법 1)DateFormatter 2)Calendar
+        //형식에 맞는 날짜를 변수로 만들어 함수의 인자로 넣어준다. (requestBoxOffice(text: dayResult))
+        
+//        1)DateFormatter으로 날짜구하기
+//        let format = DateFormatter()
+//        format.dateFormat = "yyyyMMdd"
+//        let yesterdayFromNow = Date(timeIntervalSinceNow: -86400)
+//        let dayResult = format.string(from: yesterdayFromNow)
+//
+//        2)Calendar로 날짜구하기
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let dayResult = format.string(from: yesterday!)
+        
+        requestBoxOffice(text: dayResult)
         searchBar.delegate = self
     }
 
@@ -80,7 +96,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let audiAcc = movie["audiAcc"].stringValue
                     
                     let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, toalCount: audiAcc)
-                    
                     
                     self.list.append(data)
                 }
