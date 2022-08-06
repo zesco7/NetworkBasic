@@ -31,7 +31,7 @@ class ImageSearchViewController: UIViewController {
      -. query값은 영어로 요청한다.(한글로 요청하면 에러날 수 있음: invalidURL)
      -. query값 한글을 인식하려면 코드로 처리를 해줘야한다.(addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
      -. 웹이나 인섬니아에서 json값이 보이는건 내부적으로 처리를 해주었기 때문) (*인섬니아에서 확인시 header값 입력 필요)
-     -. 사용자가 display된 검색결과를 끝까지 다 보면 start 넘버가 바뀌어야함(그래야 다음페이지에 있는 검색결과 보여줄수있음) (start=1 -> start=31)
+     -. 사용자가 display된 검색결과를 끝까지 다 보면 start 넘버가 바뀌어야함(그래야 다음페이지에 있는 검색결과 보여줄수있음) (start=1 -> start=31) 
      */
     func fetchRequest() {
         
