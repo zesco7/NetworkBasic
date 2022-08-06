@@ -21,8 +21,10 @@ class ImageSearchViewController: UIViewController {
         collectionViewResult.dataSource = self
         
         collectionViewResult.register(UINib(nibName: ImageSearchCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ImageSearchCollectionViewCell.identifier)
+        
+        
+        
  
-        fetchRequest()
     }
     
     /*이미지요청 함수 만들기(imageRequest)
@@ -31,33 +33,12 @@ class ImageSearchViewController: UIViewController {
      -. query값은 영어로 요청한다.(한글로 요청하면 에러날 수 있음: invalidURL)
      -. query값 한글을 인식하려면 코드로 처리를 해줘야한다.(addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
      -. 웹이나 인섬니아에서 json값이 보이는건 내부적으로 처리를 해주었기 때문) (*인섬니아에서 확인시 header값 입력 필요)
-     -. 사용자가 display된 검색결과를 끝까지 다 보면 start 넘버가 바뀌어야함(그래야 다음페이지에 있는 검색결과 보여줄수있음) (start=1 -> start=31) 
+     -. 사용자가 display된 검색결과를 끝까지 다 보면 start 넘버가 바뀌어야함(그래야 다음페이지에 있는 검색결과 보여줄수있음) (start=1 -> start=31)
      */
-    func fetchRequest() {
-        
-        let text = "과자".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = EndPoint.imageURL + "query=\(text)&display=30&start=1"
-        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
-        
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200..<400).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                let imageURL = json["items"][0]["link"].stringValue
-                print(imageURL)
-                
-                self.imageURL.kf.setImage(with: URL(string: imageURL)!)
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+    
 }
 
-extension ImageSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ImageSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
@@ -65,10 +46,20 @@ extension ImageSearchViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageSearchCollectionViewCell.identifier, for: indexPath) as? ImageSearchCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.fetchRequest()
+        
         return cell
             
         }
         
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let margin: CGFloat = 20
+        let width: CGFloat = (collectionView.bounds.width - margin) / 2
+        let height: CGFloat = width * 1.4
+        
+        return CGSize(width: width, height: height)
+    }
     }
     
 
