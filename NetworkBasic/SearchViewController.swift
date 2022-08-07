@@ -9,6 +9,7 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 
 
 /*
@@ -39,12 +40,22 @@ import SwiftyJSON
  -. 전체 데이터가 아닌 필요한 데이터만 표시하기 위해서는 구조체에 필요한 변수를 선언한다.(BoxOfficeModel)
  */
 
+/*로딩바 추가하기
+ -. xcode에 JGProgressHUD 설치 후 import 한다.
+ -. 클래스에 JGProgressHUD 인스턴스를 생성한다.
+ -. request함수 맨위에 로딩바 표시함수를 추가한다. : hud.show(in: self.view)
+ -. request함수에서 데이터리로드 밑에 로딩바 제거함수를 추가한다. : hud.show(in: self.view) (호출 성공시)
+ -. request함수에서 실패케이스 밑에 밑에 로딩바 제거함수를 추가한다. : hud.show(in: self.view) (호출 실패시)
+ */
+
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     
     var list: [BoxOfficeModel] = []
     
+    let hud = JGProgressHUD()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,11 +91,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //responseJSON ~~는 responseJSON 관련 코드
         //접두어 최신버젼 Alamofire -> AF
         
+        hud.show(in: self.view)
         list.removeAll()
         
         //구조체로 중복되는 부분을 접근할 수 있다.(APIKey, EndPoint) : 구조체로 접근하지 않으면 버젼관리 한 것을 다른사람이 봤을때 키값에 대한 정보를 알 수 없기 때문에 구조체로 접근하는 것이 좋음.
+        //AF.request에서 응답형식을 변경하면 response caution을 없앨 수 있다. : responseJSON -> responseData
         let url = "\(EndPoint.boxOfficeURL)key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -110,10 +123,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //                self.list.append(movieNm3)
                 
                 self.searchTableView.reloadData()
+                self.hud.dismiss()
                 
                 print(self.list)
                 
             case .failure(let error):
+                self.hud.dismiss()
                 print(error)
             }
         }
@@ -140,114 +155,3 @@ extension SearchViewController: UISearchBarDelegate {
         requestBoxOffice(text: searchBar.text!)
     }
 }
-/*
-    
-
-    var list: [String] = []
-    //var list: [BoxOfficeModel] = []
- 
-    //타입 어노테이션, 타입 추론 중 누가 더 속도가 빠를까?
-    //var nickname: string = ""
-    //var username = ""
- 
- 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //연결고리 작업 : 테이블뷰가 해야할 역할 > 뷰컨트롤러에게 요청
-//        searchTableView.delegate = self
-//        searchTableView.dataSource = self
-//
-        //테이블뷰가 사용할 테이블뷰셀(XIB)등록
-        //XIB: Xml Interface Builder (예전에는 NIB)
-        searchTableView.register(UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
-        
- 
- 023수업
- Date, DateFormatter Calendar 차이 확인
-        let format = DateFormatter()
-        format.dateFormat = "yyyyMMdd" // TMI "yyyyMMdd" "YYYYMMdd"
-        //let dateResult = Date(timeIntervalSinceNow: -84600)
-        let yesterday = Calendar.current.date)(byAdding: .day, value: 4,to: Date()) // value 날짜기준 차이 양수일때 n일 후
-        //let dateResult = format.string(from: yesterday!)
- 
-    네트워크 통신: 서버점검 등에 대한 예외 처리
-    네트워크가 느린환경에서 테스트 해봐야함(실기기 테스트 시 condition 조절가능, 시뮬레이터도 가능(추가설치필요))
- 
- 
- 
-        requestBoxoiffce(text: "20220801")
-        
-    }
-    
-    func requestBoxoiffce(text: String) {
-        //인증키 횟수제한있고 사이트마다 다름. 제한범위 넘어가면 서버통신 실패하는 구조키당 3000회.
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=847feb80cdfbe381647688f09d9e9d22&targetDt=\(text)"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                let movieNm1 = json["boxOfficeResult"]["boxOfficeResult"][0]["boxOfficeResult"]
-                let movieNm2 = json["boxOfficeResult"]["boxOfficeResult"][1]["boxOfficeResult"]
-                let movieNm3 = json["boxOfficeResult"]["boxOfficeResult"][2]["boxOfficeResult"]
-                
-                //list배열에 데이터 추가
-                self.list.append(movieNm1)
-                self.list.append(movieNm2)
-                self.list.append(movieNm3)
-                
-                
-                for movie in json["boxOfficeResult"]["boxOfficeResult"].arrayValue {
-                    
-                    let movieNm = movie["movieNm"].stringValue
-                    let openDt = movie["openDt"].stringValue
-                    let audiAcc = movie["audiAcc"].stringValue
-                    
-                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, toalCount: audiAcc)
-                    self.list.append(data)
-                }
-                
-                
-                
-                
-                
-                //테이블뷰 갱신
-                self.searchTableView.reloadData()
-                
-                print(self.list)
-                
-            case .failure(let error):
-                print(error)
-            }
-    }
-    
-    
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //return list.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
-        
-        cell.titleLabel.font = .boldSystemFont(ofSize: 22)
-        cell.titleLabel.text = "HELLO"
-        //cell.titleLabel.text = list[indexPath.row]
-        //cell.titleLabel.text = "\(list[indexPath.row].movieTitle): \(list[indexPath.row].movieTitle)"
-        
-        return cell
-    }
-}
-
-    extension SearchViewController: UISearchBarDelegate {
-        
-        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            requestBoxoiffce(url: searchBar.text!)
-
-    }
-*/
